@@ -41,9 +41,9 @@ const server = http.createServer((req, res) => {
   border-radius:10px; 
   padding:3rem;">
   Go to to <a 
-            href="http://localhost:5000/resources" 
+            href="https://discreet-playful-table.glitch.me//resources" 
             target="_blank">
-              http://localhost:5000/resources
+            https://discreet-playful-table.glitch.me//resources
           </a>  
           to view all current
   resources in a pretty format
