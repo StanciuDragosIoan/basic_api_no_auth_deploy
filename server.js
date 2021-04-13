@@ -103,7 +103,7 @@ const server = http.createServer((req, res) => {
   Go to to <a 
       href="#">${rootUrl}/resource/:id
     </a>  (e.g. <a 
-          href="#">${rootUrl}/resource/5
+          href="${rootUrl}/resource/5">${rootUrl}/resource/5
       </a> to access the resource with id 5)
   to edit or delete a specific resource. Be careful! 
   The id you 
