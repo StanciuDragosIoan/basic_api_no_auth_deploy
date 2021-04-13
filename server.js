@@ -9,6 +9,8 @@ const PORT = process.env.port || 5000;
 const server = http.createServer((req, res) => {
   //define url
   const url = req.url;
+  const hostname = req.headers.host;
+  const rootUrl = `https://${hostname}`;
   //define request
   const method = req.method;
   //set content type header
@@ -16,6 +18,7 @@ const server = http.createServer((req, res) => {
 
   switch (url) {
     case "/":
+      console.log(rootUrl);
       //write client response
       res.write(`
 <h2 
@@ -41,9 +44,9 @@ const server = http.createServer((req, res) => {
   border-radius:10px; 
   padding:3rem;">
   Go to to <a 
-            href="https://discreet-playful-table.glitch.me//resources" 
+            href="${rootUrl}/resources" 
             target="_blank">
-            https://discreet-playful-table.glitch.me//resources
+            ${rootUrl}/resources
           </a>  
           to view all current
   resources in a pretty format
@@ -60,10 +63,10 @@ const server = http.createServer((req, res) => {
   padding:3rem;"
 >
   Go to to <a 
-            href="http://localhost:5000/resources/json" 
+            href="${rootUrl}/resources/json" 
             target="_blank">
-              http://localhost:5000/resources/json
-            </a>  to view all current
+            ${rootUrl}/resources/json
+            </a>  to view all current2
   resources in a JSON-like format
 </h2>
 
@@ -78,9 +81,9 @@ const server = http.createServer((req, res) => {
   border-radius:10px; padding:3rem;"
 >
   Go to to <a 
-            href="http://localhost:5000/resource/add" 
+            href="${rootUrl}/resource/add" 
             target="_blank">
-              http://localhost:5000/resource/add
+              ${rootUrl}/resource/add
             </a>  to add
   a new resource. Be careful! The ID you submit must 
   not already exist, or the API won't let you add 
@@ -98,9 +101,9 @@ const server = http.createServer((req, res) => {
   border-radius:10px; 
   padding:3rem;">
   Go to to <a 
-      href="#">http://localhost:5000/resource/:id
+      href="#">${rootUrl}/resource/:id
     </a>  (e.g. <a 
-          href="#">http://localhost:5000/resource/5
+          href="#">${rootUrl}/resource/5
       </a> to access the resource with id 5)
   to edit or delete a specific resource. Be careful! 
   The id you 
