@@ -3,7 +3,7 @@ const http = require("http");
 const resource = require("./resource");
 
 //define port for our server to listen to
-const PORT = process.env.port || 3000;
+const PORT = process.env.port || 5000;
 
 //create server
 const server = http.createServer((req, res) => {
