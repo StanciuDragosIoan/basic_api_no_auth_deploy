@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   //define url
   const url = req.url;
   const hostname = req.headers.host;
-  const rootUrl = `https://${hostname}`;
+  const rootUrl = `http://${hostname}`;
   //define request
   const method = req.method;
   //set content type header
@@ -101,7 +101,7 @@ const server = http.createServer((req, res) => {
   border-radius:10px; 
   padding:3rem;">
   Go to to <a 
-      href="#">${rootUrl}/resource/:id
+      href="${rootUrl}/resource/5">${rootUrl}/resource/:id
     </a>  (e.g. <a 
           href="${rootUrl}/resource/5">${rootUrl}/resource/5
       </a> to access the resource with id 5)
@@ -197,7 +197,7 @@ const server = http.createServer((req, res) => {
       resource.deleteResource(req, res);
       break;
     default:
-      resource.searchEditOrDeleteResource(req, res);
+      resource.searchEditOrDeleteResource(req, res, rootUrl);
       break;
   }
 });

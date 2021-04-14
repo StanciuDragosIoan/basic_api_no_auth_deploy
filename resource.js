@@ -98,7 +98,7 @@ const resource = {
     });
   },
 
-  searchEditOrDeleteResource: (req, res) => {
+  searchEditOrDeleteResource: (req, res, rootUrl) => {
     let url = req.url;
     let method = req.method;
     //split url to check params
@@ -145,7 +145,7 @@ const resource = {
         >
         <a 
           target="_blank" 
-  href="http://localhost:5000/edit/resource/${id}">
+  href="${rootUrl}/edit/resource/${id}">
           Edit resource with id ${id}
         </a>
             </button>
@@ -177,7 +177,7 @@ const resource = {
             >
               <a 
                 target="_blank" 
-  href="http://localhost:5000/delete/resource/${id}"
+  href="${rootUrl}/delete/resource/${id}"
               >
                 Delete resource with id ${id}
               </a>
@@ -199,9 +199,9 @@ const resource = {
       resource with the id ${id} to delete/update.
             Add it by going to 
             <a 
-        href="http://localhost:5000/resource/add" 
+        href="${rootUrl}/resource/add" 
               target="_blank">
-          http://localhost:5000/resource/add
+              ${rootUrl}/resource/add
             </a> 
           </h1>
           `);
@@ -223,9 +223,9 @@ const resource = {
             resources to delete/update.
             Add some by going to 
               <a 
-          href="http://localhost:5000/resource/add" 
+          href="${rootUrl}/resource/add" 
                 target="_blank">
-              http://localhost:5000/resource/add
+                ${rootUrl}/resource/add
               </a> 
           </h1>
         `);
@@ -334,9 +334,9 @@ const resource = {
       resource with the id ${tempId} to delete/update.
               Add it by going to 
               <a 
-              href="http://localhost:5000/resource/add" 
+              href="${rootUrl}/resource/add" 
                 target="_blank">
-                  http://localhost:5000/resource/add
+                  ${rootUrl}/resource/add
               </a> 
             </h1>
           `);
