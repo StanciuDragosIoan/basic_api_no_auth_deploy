@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
   //define url
   const url = req.url;
   const hostname = req.headers.host;
-  const rootUrl = `http://${hostname}`;
+  const rootUrl = `https://${hostname}`;
   //define request
   const method = req.method;
   //set content type header
